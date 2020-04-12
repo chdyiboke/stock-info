@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MENU</title>
+    <style type="text/css">
+        .menu {
+            font-size: 0; /*去掉ul自带的.格式*/
+            list-style: none;
+            padding: 0;
+            background: #E74C3C;
+            width: 100%;
+        }
+        .menu li{ /*将元素转换为行内块元素*/
+            display:inline-block;
+            width:98px;
+            height:48px;
+            font-size:16px;/*将边框合并*/
+            text-align:center;
+            line-height:48px;
+        }
+        .menu a{
+            color:#fff;
+            text-decoration: none; /*去掉a元素的下划线*/
+        }
+        /*鼠标位于元素位置时改变元素样式*/
+        .menu li:hover{
+            background-color: #921e12;
+        }
+        .menu a:hover{
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+<ul class="menu">
+    <li><a href="home.html">首页</a></li>
+    <li><a href="data.html">数据获取</a></li>
+    <li><a href="messages.html">舆情分析</a></li>
+    <li><a href="help.html">帮助</a></li>
+</ul>
+<div id="home">
+    首页
+</div>
+</body>
+</html>
