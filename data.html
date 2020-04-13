@@ -52,9 +52,41 @@
     </div>
 
     <div>
-        <button type="button" style="width: 100px;height: 40px;">按钮</button>
+        <button type="button" onclick="downloadFile()" style="width: 100px;height: 40px;">按钮</button>
     </div>
 
 </div>
 </body>
+<script>
+    function downloadFile(){
+        var fileurl = './img/tjb.xlsx'; // 参数可以加到URL后面
+        // window.open(fileurl);
+        // return;
+
+        // var domIframe = document.createElement('iframe');
+        // domIframe.style.display = 'none';
+        // document.body.appendChild(domIframe);
+        // domIframe.onload = function() {
+        //     var iframeDoc = domIframe.contentDocument || {};
+        //     if (iframeDoc.body.children.length) {
+        //         toastr.warning('下载文件失败');
+        //     }
+        // };
+        // domIframe.src = fileurl;
+        // return;
+        var form = document.createElement("form");                                                                                                                                                       
+        document.getElementsByTagName('body')[0].appendChild(form);
+        form.setAttribute('style', 'display:none');
+        form.setAttribute('target', '');
+        form.setAttribute('method', 'get');
+        form.setAttribute('action', fileurl);//下载文件的请求路径
+        var input1 = document.createElement('input');
+        input1.setAttribute('type', 'hidden');
+        input1.setAttribute('name', 'clinicId');
+        input1.setAttribute('value', '123'); // sess.clinicId
+        form.appendChild(input1);
+        form.submit();
+    }
+
+</script>
 </html>
